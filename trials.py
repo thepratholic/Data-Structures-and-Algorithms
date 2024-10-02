@@ -1,12 +1,12 @@
-def isPrime(n):
-    if n <= 1:
-        return False
 
-    for i in range(2, n):
-        if n % i == 0:
-            return False
-    
-    return True
+class Solution:
+    cnt = 0
+    def f(self):
+        if self.cnt == 3: return 
+        print(self.cnt)
+        self.cnt+=1
+        self.f()
 
-# Test the function
-print(isPrime(6))
+
+s = Solution()
+print(s.f())
