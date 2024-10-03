@@ -4,6 +4,6 @@ def fact(n):
 
 
 def nCr(n,r):
-    #code here
+    # code here
     if r > n: return 0
     return fact(n) // (fact(r) * fact(n-r))
