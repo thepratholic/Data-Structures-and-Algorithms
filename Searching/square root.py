@@ -10,7 +10,6 @@ class Solution:
                 low = mid + 1
                 ans = mid
             else: high = mid - 1
-
         return ans
 
 s = Solution()
