@@ -8,10 +8,11 @@ class Node:
 '''
 def searchLinkedList(head,x):
     #code here
+    pos = 1
     curr = head
     while curr:
         if curr.data == x:
-            return 1
+            return pos
+        pos += 1
         curr = curr.next
-
-    return 0
+    return -1
