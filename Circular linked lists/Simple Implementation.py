@@ -6,7 +6,7 @@ class Node:
 def printList(head):
     if head is None: return None
 
-    print(head.data)
+    print(head.data, end=" ")
 
     curr = head.next
 
