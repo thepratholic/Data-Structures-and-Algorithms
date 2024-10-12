@@ -20,7 +20,7 @@ class Stack:
         return popped
 
     def isEmpty(self):
-        return True if self.stack else False
+        return self.sizeStack == 0
 
     def display(self):
         for i in range(self.sizeStack):
