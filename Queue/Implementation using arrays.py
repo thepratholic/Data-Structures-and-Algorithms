@@ -37,35 +37,28 @@ class Queue:
         else:
             print("\nFront Element is:", self.queue[self.front])
 
+    def queueRear(self):
+        if self.front == self.rear:
+            print("Queue is empty")
+        else:
+            print(self.queue[self.rear-1])
 
-# Driver code
-if __name__ == '__main__':
-    q = Queue(4)
+q = Queue(4)
 
-    # Print queue elements
-    q.queueDisplay()
+# Print queue elements
+q.queueDisplay()
+q.queueEnqueue(20)
+q.queueEnqueue(30)
+q.queueEnqueue(40)
+q.queueEnqueue(50)
 
-    # Inserting elements in the queue
-    q.queueEnqueue(20)
-    q.queueEnqueue(30)
-    q.queueEnqueue(40)
-    q.queueEnqueue(50)
+# Print queue elements
+q.queueDisplay()
 
-    # Print queue elements
-    q.queueDisplay()
 
-    # Insert element in queue
-    q.queueEnqueue(60)
+q.queueDequeue()
+q.queueDequeue()
 
-    # Print queue elements
-    q.queueDisplay()
-
-    q.queueDequeue()
-    q.queueDequeue()
-    print("\n\nafter two node deletion\n")
-
-    # Print queue elements
-    q.queueDisplay()
-
-    # Print front of queue
-    q.queueFront()
+# Print front of queue
+q.queueFront()
+q.queueRear()
