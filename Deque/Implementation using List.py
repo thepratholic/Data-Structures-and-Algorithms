@@ -12,10 +12,9 @@ class Deque:
         self.sz += 1
 
     def deleteRear(self):
-        if self.sz == 0: return None  # Deque is empty
+        if self.sz == 0: return None
         rear = (self.front + self.sz - 1) % self.capacity
         res = self.deque[rear]
-        # self.deque[rear] = None  # Optional: Clear the value
         self.sz -= 1
         return res
 
