@@ -10,7 +10,7 @@ class Queue:
         self.size += 1
 
     def dequeue(self):
-        if self.front == self.rear:
+        if self.isEmpty():
             print("Queue is empty\n")
         else:
             popped = self.queue[self.front]
@@ -20,6 +20,9 @@ class Queue:
 
     def Size(self):
         return self.size
+    
+    def isEmpty(self):
+        return self.size == 0
 
     def getFront(self):
         if self.front == self.rear:
