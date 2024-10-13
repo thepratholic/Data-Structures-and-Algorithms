@@ -17,7 +17,7 @@ class Queue:
         if self.size == 0: return
         else:
             res = self.q[self.front]
-            self.front = (self.front + 1) % self.capacity
+            self.front += 1 % self.capacity
             self.size -= 1
             return res
 
