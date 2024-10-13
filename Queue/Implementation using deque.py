@@ -25,13 +25,13 @@ class Queue:
         return self.size == 0
 
     def getFront(self):
-        if self.front == self.rear:
+        if self.size == 0:
             print("Queue is empty\n")
         else:
             return self.queue[self.front]
 
     def getRear(self):
-        if self.front == self.rear:
+        if self.size == 0:
             print("Queue is empty\n")
         else:
             return self.queue[self.rear-1]
