@@ -10,7 +10,6 @@ def Height(root):
     else:
         lh = Height(root.left)
         rh = Height(root.right)
-
         return max(lh, rh) + 1
 
 root = Node(10)
