@@ -29,9 +29,9 @@ class MyMinHeap:
         rightChild = self.rightChild(index)
         smallest = index
         n = len(self.heap)
-        if leftChild < n and self.heap[leftChild] < smallest:
+        if leftChild < n and self.heap[leftChild] < self.heap[smallest]:
             smallest = leftChild
-        if rightChild < n and self.heap[rightChild] < smallest:
+        if rightChild < n and self.heap[rightChild] < self.heap[smallest]:
             smallest = rightChild
         if smallest != index:
             self.heap[smallest], self.heap[index] = self.heap[index], self.heap[smallest]
@@ -59,3 +59,14 @@ class MyMinHeap:
         else:
             self.decreaseKey(index, -math.inf)
             self.extract_min()
+
+
+h = MyMinHeap()
+h.insert(10)
+h.insert(8)
+h.insert(4)
+h.insert(12)
+h.insert(15)
+h.insert(23)
+h.minHeapify(0)
+print(h.extract_min())
