@@ -26,14 +26,14 @@ class Solution:
         for i in range(n - 1):
             high = max(high, arr[i + 1] - arr[i])
 
-        # Apply Binary search to find the 
+        # Apply Binary search to find the
         # minimum possible maximum distance
         diff = 1e-6
         while high - low > diff:
             mid = (low + high) / 2.0
             cnt = self.numberOfGasStationsRequired(mid, arr)
 
-            # Adjust the search range based on the 
+            # Adjust the search range based on the
             # number of gas stations required
             if cnt > k:
                 low = mid
