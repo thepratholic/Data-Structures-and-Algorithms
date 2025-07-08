@@ -1,18 +1,20 @@
 class Solution:
-    def maxScore(self, cards, k):
-        n, lSum, rSum, maxSum = len(cards), 0, 0, 0
+    def maxScore(self, cardScore, k):
+        #your code goes here
+        n = len(cardScore)
+        left_sum, right_sum = 0, 0
+        max_score = 0
         for i in range(k):
-            lSum += cards[i]
-            maxSum = max(maxSum, lSum)
+            left_sum += cardScore[i]
 
-        rIndex = n- 1
-        for j in range(k-1, -1, -1):
-            lSum -= cards[j]
-            rSum += cards[rIndex]
-            rIndex -= 1
-            maxSum = max(maxSum, lSum + rSum)
+        max_score = max(max_score, left_sum)
 
-        return maxSum
+        right_index = n - 1
 
-s = Solution()
-print(s.maxScore([1,2,3,4,5,6,1], 3))
+        for i in range(k-1, -1, -1):
+            left_sum -= cardScore[i]
+            right_sum += cardScore[right_index]
+            right_index -= 1
+            max_score = max(max_score, left_sum + right_sum)
+
+        return max_score
