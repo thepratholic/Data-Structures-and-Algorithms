@@ -1,21 +1,22 @@
 class Solution:
-    def characterReplacement(self, s, k):
-        n, l, r, maxLen, maxF, hash = len(s), 0, 0, 0, 0, [0] * 26
+    def characterReplacement(self, s: str, k: int) -> int:
+        #your code goes here
+        n = len(s)
+        l, r = 0, 0
+        max_len = 0
+
+        maxFreq = 0
+        mpp = [0] * 26
 
         while r < n:
-            hash[ord(s[r]) - ord('A')] += 1
-            maxF = max(maxF, hash[ord(s[r]) - ord('A')])
+            mpp[ord(s[r]) - ord("A")] += 1
 
-            if (r - l + 1) - maxF > k:
-                hash[ord(s[l]) - ord('A')] -= 1
-                maxF = 0
-                l+=1
+            maxFreq = max(maxFreq, mpp[ord(s[r]) - ord("A")])
 
-            if (r - l + 1) - maxF <= k:
-                maxLen = max(maxLen, r - l + 1)
-            r+=1
+            if (r - l + 1) - maxFreq > k:
+                mpp[ord(s[l]) - ord("A")] -= 1
+                l += 1
 
-        return maxLen
-
-s = Solution()
-print(s.characterReplacement("ABAB", 2))
+            max_len = max(max_len, r - l + 1)
+            r += 1
+        return max_len
