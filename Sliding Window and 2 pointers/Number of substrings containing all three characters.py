@@ -1,12 +1,15 @@
-class Solution:
-    def numberOfSubstrings(self, s):
-        lastSeen = [-1] * 3
+class Solution:    
+    def numberOfSubstrings(self, s: str) -> int:
+        #your code goes here
         n = len(s)
-        cnt = 0
-        for i in range(n):
-            lastSeen[ord(s[i]) - ord('a')] = i
-            cnt += (1 + min(lastSeen[0], lastSeen[1], lastSeen[2]))
-        return cnt
 
-s= Solution()
-print(s.numberOfSubstrings("abcabc"))
+        last_seen = [-1] * 3
+        count = 0
+
+        for i in range(n):
+            last_seen[ord(s[i]) - ord("a")] = i 
+
+            if last_seen[0] != -1 and last_seen[1] != -1 and last_seen[2] != -1:
+                count += (1 + min(last_seen[0], last_seen[1], last_seen[2]))
+
+        return count
