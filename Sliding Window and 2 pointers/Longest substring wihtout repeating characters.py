@@ -1,11 +1,19 @@
 class Solution:
-    def lengthOfLongestSubstring(self, s: str) -> int:
-        hash = [-1] * 256
-        n, l, r, maxLen = len(s), 0, 0, 0
+    def longestNonRepeatingSubstring(self, s):
+        #your code goes here
+        n = len(s)
+        hash_set = [-1] * 256
+        l, r = 0, 0
+        max_len = 0
+
         while r < n:
-            if hash[ord(s[r])] != -1:
-                l = max(l, hash[ord(s[r])] + 1)
-            hash[ord(s[r])] = r
-            maxLen = max(maxLen, r - l + 1)
-            r+=1
-        return maxLen
+
+            if hash_set[ord(s[r])] != -1:
+                if hash_set[ord(s[r])] >= l:
+                    l = hash_set[ord(s[r])] + 1
+                
+            max_len = max(max_len, r - l + 1)
+            hash_set[ord(s[r])] = r
+            r += 1
+
+        return max_len
