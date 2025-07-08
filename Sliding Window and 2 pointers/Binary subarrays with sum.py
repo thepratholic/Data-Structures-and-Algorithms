@@ -1,20 +1,21 @@
 class Solution:
-    def f(self, nums, goal):
-        if goal < 0: return 0
-        n, l, r, summ, cnt = len(nums), 0, 0, 0, 0
+    def numSubarraysWithSum(self, nums, goal):
+        #your code goes here
+        return self.helper(nums, goal) - self.helper(nums, goal - 1)
 
+
+    def helper(self, nums, goal):
+        if goal < 0: 
+            return 0
+        l, r = 0, 0
+        n = len(nums)
+        count = 0
+        sum_val = 0
         while r < n:
-            summ += nums[r]
-            while summ > goal:
-                summ -= nums[l]
-                l+=1
-
-            cnt += (r - l + 1)
+            sum_val += nums[r]
+            while sum_val > goal:
+                sum_val -= nums[l]
+                l += 1
+            count += (r - l + 1)
             r += 1
-        return cnt
-
-    def binarySubarrays(self, nums, goal):
-        return self.f(nums, goal) - self.f(nums, goal - 1)
-
-s = Solution()
-print(s.binarySubarrays([1, 0, 1, 0, 1], 2))
+        return count
