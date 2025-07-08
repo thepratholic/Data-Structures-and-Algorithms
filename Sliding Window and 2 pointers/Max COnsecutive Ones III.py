@@ -1,16 +1,22 @@
 class Solution:
     def longestOnes(self, nums, k):
-        n, l, r, maxLen, zeros = len(nums), 0, 0, 0, 0
+        #your code goes here
+        n = len(nums)
+
+        l, r = 0, 0
+        max_len = 0
+        zeros = 0
         while r < n:
-            if nums[r] == 0: zeros += 1
+            if nums[r] == 0:
+                zeros += 1
+
             if zeros > k:
-                if nums[l] == 0: zeros-=1
-                l+=1
-
+                if nums[l] == 0:
+                    zeros -= 1
+                l += 1
+            
             if zeros <= k:
-                maxLen = max(maxLen, r - l + 1)
-            r += 1
-        return maxLen
+                max_len = max(max_len, r - l + 1)
 
-s = Solution()
-print(s.longestOnes([1,1,1,0,0,0,1,1,1,1,0], 2))
+            r += 1
+        return max_len
