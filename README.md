@@ -6,7 +6,7 @@
 ## Clone this repository:
 1)**Clone** this repository to your local machine:
 ```sh
-https://github.com/prathammkc/Data-Structures-and-Algorithms.git
+https://github.com/thepratholic/Data-Structures-and-Algorithms.git
 ```
 
 2)**Navigate through the folders** to find the code for the DSA topics you are interested in.
