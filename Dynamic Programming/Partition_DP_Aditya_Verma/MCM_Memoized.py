@@ -15,7 +15,9 @@ def solve(nums, i, j, dp):
 
 def main():
     nums = [1, 2, 3, 4]
-    print(solve(nums, 1, 3))
+    n = len(nums)
+    dp = [[-1] * n for _ in range(n)]
+    print(solve(nums, 1, 3, dp))
 
 if __name__ == "__main__":
     main()
