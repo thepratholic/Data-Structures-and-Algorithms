@@ -13,8 +13,8 @@ def solve(nums, i, j, dp):
 
         mini = min(mini, temp)
 
-    return mini
-
+    dp[i][j] = mini
+    return dp[i][j]
 
 def main():
     nums = [1, 2, 3, 4]
