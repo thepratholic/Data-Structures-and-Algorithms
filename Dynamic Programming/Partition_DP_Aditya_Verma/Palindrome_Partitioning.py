@@ -27,7 +27,7 @@ def solve(s, i, j, dp):
 
 
 def main():
-    s = "nitin"
+    s = "nitik"
     n = len(s)
     dp = [[-1] * n for _ in range(n)]
     print(solve(s, 0, n - 1, dp))
