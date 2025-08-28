@@ -9,7 +9,7 @@ def solve(nums, i, j, dp):
     
     mini = float('inf')
     for k in range(i, j):
-        temp = nums[i - 1] * nums[k] * nums[j] + solve(nums, i, k) + solve(nums, k + 1, j)
+        temp = nums[i - 1] * nums[k] * nums[j] + solve(nums, i, k, dp) + solve(nums, k + 1, j, dp)
 
         mini = min(mini, temp)
 
