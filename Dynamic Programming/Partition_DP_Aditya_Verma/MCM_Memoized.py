@@ -1,6 +1,6 @@
 # matrix chain multiplication memoized code
 
-def solve(nums, i, j):
+def solve(nums, i, j, dp):
     if i >= j:
         return 0
     
