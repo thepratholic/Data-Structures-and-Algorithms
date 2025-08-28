@@ -1,4 +1,4 @@
-# matrix chain multiplication 
+# matrix chain multiplication recursive code
 
 def solve(nums, i, j):
     if i >= j:
