@@ -4,6 +4,9 @@ def solve(nums, i, j, dp):
     if i >= j:
         return 0
     
+    if dp[i][j] != -1:
+        return dp[i][j]
+    
     mini = float('inf')
     for k in range(i, j):
         temp = nums[i - 1] * nums[k] * nums[j] + solve(nums, i, k) + solve(nums, k + 1, j)
