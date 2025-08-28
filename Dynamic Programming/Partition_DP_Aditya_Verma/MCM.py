@@ -20,4 +20,4 @@ def main():
 if __name__ == "__main__":
     main()
 
-# output is : 18
+# Output is : 18
