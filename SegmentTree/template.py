@@ -25,4 +25,19 @@ class SegmentTree:
         mid = (l + r) >> 1
         
         return self.query(2 * i + 1, l, mid, start, end) + self.query(2 * i + 2, mid + 1, r, start, end)
+    
+    def update(self, idx, l, r, u_idx, u_val): # this is for single point update
+        if l == r:
+            self.tree[idx] = u_val
+            return
         
+        mid = (l + r) >> 1
+        if u_idx <= mid:
+            self.update(2 * idx + 1, l, mid, u_idx, u_val)
+
+        else:
+            self.update(2 * idx + 2, mid + 1, r, u_idx, u_val)
+
+        self.tree[idx] = self.tree[2 * idx + 1] +  self.tree[2 * idx + 2]
+        return
+            
